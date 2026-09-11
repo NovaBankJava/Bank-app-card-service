@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:carddb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+
+card:
+  crypto:
+    # SOMENTE DEV — chaves fixas só pra app rodar. Nunca em prod, nunca commitar reais.
+    aes-key: ${CARD_AES_KEY:LT2iC8h954CxqJtQVPzAwQ5nCgEiFUly+oi16d2Ivco=}
+    hmac-key: ${CARD_HMAC_KEY:IMnnMcdZdhZ24vd5erR3gZ5JYMTdwT1BDQ+egCMbhZY=}

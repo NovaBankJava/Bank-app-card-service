@@ -1,3 +1,15 @@
 spring:
   application:
-    name: Bank-app-card-service
+    name: bank-app-card-service
+  profiles:
+    active: dev
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO:update}
+
+card:
+  bin: ${CARD_BIN:400000}          # BIN fictício (6 primeiros dígitos)
+  crypto:
+    aes-key: ${CARD_AES_KEY}       # base64, 32 bytes
+    hmac-key: ${CARD_HMAC_KEY}     # base64, 32 bytes
